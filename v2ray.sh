@@ -2622,13 +2622,13 @@ get_ip() {
 
 	if [[ $NET_STACK == "4" ]]; then
 		ip=$(curl -4 -s http://api.myip.la)
-		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+D8aqonnCR3s1NTRl${none}\n" && exit
+		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+ISuvkzFGZPBhMzE1${none}\n" && exit
 	elif [[ $NET_STACK == "6" ]]; then 
 		ip=$(curl -6 -s http://api.myip.la)
-		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+D8aqonnCR3s1NTRl${none}\n" && exit
+		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+ISuvkzFGZPBhMzE1${none}\n" && exit
 	else
 		ip=$(curl -s http://api.myip.la)
-		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+D8aqonnCR3s1NTRl${none}\n" && exit
+		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+ISuvkzFGZPBhMzE1${none}\n" && exit
 	fi
 }
 
