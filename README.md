@@ -10,7 +10,7 @@
 
 - 获得IP方法修改为 
 ```
-ip=$(curl -s http://api.myip.la)
+ip=$(curl -s https://www.cloudflare.com/cdn-cgi/trace | grep ip= | sed -e "s/ip=//g")
 ```
 
 - 检查域名解析方法修改为 
