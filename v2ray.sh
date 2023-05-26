@@ -2621,13 +2621,16 @@ get_ip() {
 	[[ -z $NET_STACK ]] && export NET_STACK=$(echo $_V2RAY_NET_STACK_)
 
 	if [[ $NET_STACK == "4" ]]; then
-		ip=$(curl -4 -s http://api.myip.la)
+		# ip=$(curl -4s https://api.myip.la)
+		ip=$(curl -4s https://www.cloudflare.com/cdn-cgi/trace | grep ip= | sed -e "s/ip=//g")
 		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+ISuvkzFGZPBhMzE1${none}\n" && exit
 	elif [[ $NET_STACK == "6" ]]; then 
-		ip=$(curl -6 -s http://api.myip.la)
+		# ip=$(curl -6s https://api.myip.la)
+		ip=$(curl -6s https://www.cloudflare.com/cdn-cgi/trace | grep ip= | sed -e "s/ip=//g")
 		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+ISuvkzFGZPBhMzE1${none}\n" && exit
 	else
-		ip=$(curl -s http://api.myip.la)
+		# ip=$(curl -s https://api.myip.la)
+		ip=$(curl -s https://www.cloudflare.com/cdn-cgi/trace | grep ip= | sed -e "s/ip=//g")
 		[[ -z $ip ]] && echo -e "\n$red 检测本机IP失败, 请加群求助${cyan}https://t.me/+ISuvkzFGZPBhMzE1${none}\n" && exit
 	fi
 }
